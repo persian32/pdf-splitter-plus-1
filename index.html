@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PDF Splitter</title>
+<title>PDF Splitter Plus</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -144,7 +144,7 @@
 <body>
 
 <header>
-  <h1><span class="grid-mark">▦</span> PDF Splitter</h1>
+  <h1><span class="grid-mark">▦</span> PDF Splitter <span style="font-size:.62em;color:var(--grid-green);letter-spacing:.04em">PLUS</span></h1>
   <p>스캔한 PDF 한 파일을 개인별로 나눕니다. 미제출자 자리에는 빈 종이를 넣어 스캔하는 것을 권장합니다.</p>
   <span class="privacy">모든 처리는 이 브라우저 안에서만 — 파일이 서버로 전송되지 않습니다</span>
 </header>
@@ -260,11 +260,8 @@ const S = {
 };
 function rotOf(i){ return (S.globalRot + (S.chunkRot.get(i)||0)) % 360; }
 const $ = id => document.getElementById(id);
-/* 5단계(지시문)는 ?plus=1 이 붙은 주소에서만 나타난다.
-   가을 공개 시 PLUS 상수와 아래 두 곳의 조건만 지우면 모두에게 열린다. */
-const PLUS = new URLSearchParams(location.search).has("plus");
+
 const on = (id, ev, fn) => $(id).addEventListener(ev, fn);
-if(!PLUS) $("step5").style.display = "none";
 
 /* ---------- 1단계: 파일 ---------- */
 function pickFile(){ $("file").click(); }
@@ -332,7 +329,7 @@ on("split","click",()=>{
   }
   $("step3").removeAttribute("data-off");
   $("step4").removeAttribute("data-off");
-  if(PLUS) $("step5").removeAttribute("data-off");
+  $("step5").removeAttribute("data-off");
   renderChunks();
 });
 
