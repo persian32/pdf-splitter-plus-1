@@ -39,7 +39,7 @@ https://persian32.github.io/pdf-splitter-plus/
 2. 이름 목록 붙여넣기 → `분할하기`
 3. 썸네일로 조각 확인 — 어긋난 곳은 경계 조정, 빈 종이는 `제외`, 방향은 회전
 4. 개별 저장 또는 `전체 ZIP으로 내려받기`
-5. `지시문 복사` → 나눈 PDF와 함께 AI에 붙여넣기
+5. `지시문 복사` → **ZIP 압축을 푼 뒤** PDF를 AI에 직접 올리고 지시문 붙여넣기 (한 번에 5명 안팎)
 
 ### 스캔 요령
 
@@ -60,6 +60,9 @@ https://persian32.github.io/pdf-splitter-plus/
 비워두면 순번만 붙습니다.
 
 ## 5단계 — AI 지시문
+
+**ZIP은 AI가 읽지 못한다.** 압축을 풀고 PDF 파일을 직접 올릴 것. 스캔 PDF는 이미지라
+무거워서, 한 번에 5명 안팎이 적당하다 — 많이 넣을수록 판독이 부실해지거나 학생이 섞인다.
 
 나눈 PDF를 AI(Claude, ChatGPT 등)에 올릴 때 함께 붙여넣는 지시문. 편집 가능하며
 `기본값으로 되돌리기`로 언제든 원래 문구가 복원된다. 칸의 내용은 저장되지 않는다.
@@ -105,3 +108,6 @@ https://persian32.github.io/pdf-splitter-plus/
 © 2026 Hwasun Jung. All rights reserved.
 
 누구나 위 링크로 자유롭게 사용하셔도 됩니다.
+
+
+
